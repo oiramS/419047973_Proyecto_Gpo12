@@ -96,10 +96,9 @@ int main()
 
 
 	// Load models
-	Model box((char*)"Models/Box/box.obj");
-	Model poke((char*)"Models/PokeBall/Poke.obj");
-	Model ball((char*)"Models/PokeBall/Ball.obj");
 	Model wizardHat((char*)"Models/WizardHat/wizardHat.obj");
+	Model buro((char*)"Models/Buro/Buro.obj");
+	Model globo((char*)"Models/globo/Globo.obj");
 	glm::mat4 projection = glm::perspective(camera.GetZoom(), (float)SCREEN_WIDTH / (float)SCREEN_HEIGHT, 0.1f, 100.0f);
 
 	GLfloat vertices[] =
@@ -198,7 +197,12 @@ int main()
 		model = glm::mat4(1);
 		model = glm::rotate(model, glm::radians(-rot), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-		wizardHat.Draw(shader);
+		buro.Draw(shader);
+
+		model = glm::mat4(1);
+		model = glm::rotate(model, glm::radians(-rot), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+		globo.Draw(shader);
 
 		glBindVertexArray(0);
 		glActiveTexture(GL_TEXTURE0);
