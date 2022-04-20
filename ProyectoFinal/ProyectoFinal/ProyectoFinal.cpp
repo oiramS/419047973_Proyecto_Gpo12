@@ -90,9 +90,9 @@ int main()
 	glEnable(GL_DEPTH_TEST);
 
 	// Setup and compile our shaders
+	Shader lightingShader("Shaders/lighting.vs", "Shaders/lighting.frag");
 	Shader shader("Shaders/modelLoading.vs", "Shaders/modelLoading.frag");
 	Shader lampshader("Shaders/lamp.vs", "Shaders/lamp.frag");
-
 
 
 	// Load models
@@ -192,6 +192,7 @@ int main()
 		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
 
+
 		// Draw the loaded model
 		glm::mat4 model(1);
 		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
@@ -199,7 +200,7 @@ int main()
 		model = glm::mat4(1);
 		model = glm::rotate(model, glm::radians(-rot), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-		Telescope.Draw(shader);
+		Telescope.Draw(lightingShader);
 
 		glBindVertexArray(0);
 		glActiveTexture(GL_TEXTURE0);
