@@ -102,6 +102,8 @@ int main()
 	Model Telescope((char*)"Models/Telescope/Telescope.obj");
 	Model cofre((char*)"Models/Chest/Cofre.obj");
 	Model cama((char*)"Models/cama/cama.obj");
+	Model robot((char*)"Models/Aweosom-o/Aweosom-o.obj");
+
 
 
 
@@ -239,6 +241,13 @@ int main()
 		model = glm::rotate(model, glm::radians(45.0f), glm::vec3(0.0f, 0.0f, 1.0f));
 		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
 		wizardHat.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		model = glm::translate(model, glm::vec3(10.0f, 1.0f, -1.0f));
+		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+		cofre.Draw(lightingShader);
 
 		glBindVertexArray(0);
 		glActiveTexture(GL_TEXTURE0);
