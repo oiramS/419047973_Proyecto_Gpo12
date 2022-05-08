@@ -102,7 +102,14 @@ int main()
 	Model Telescope((char*)"Models/Telescope/Telescope.obj");
 	Model cofre((char*)"Models/Chest/Cofre.obj");
 	Model cama((char*)"Models/cama/cama.obj");
-	Model robot((char*)"Models/Aweosom-o/Aweosom-o.obj");
+	Model robot((char*)"Models/Aweosom-o/Aweoson-o.obj");
+
+	Model comp((char*)"Models/Computer/Computer.obj");
+	Model escritorio((char*)"Models/Escritorio/Escritorio.obj");
+	Model silla((char*)"Models/Silla/Silla.obj");
+	Model tanque((char*)"Models/Tanque/Tanque.obj");
+
+
 
 
 
@@ -248,6 +255,42 @@ int main()
 		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
 		cofre.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		model = glm::translate(model, glm::vec3(0.0f, -1.0f, 5.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+		robot.Draw(lightingShader);
+
+
+		model = glm::mat4(1);
+		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		model = glm::translate(model, glm::vec3(0.0f, -1.0f, 15.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+		comp.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		model = glm::translate(model, glm::vec3(0.0f, -1.0f, 15.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+		escritorio.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		model = glm::translate(model, glm::vec3(0.0f, -1.0f, 15.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+		silla.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		model = glm::translate(model, glm::vec3(0.0f, -1.0f, 15.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+		tanque.Draw(lightingShader);
+
 
 		glBindVertexArray(0);
 		glActiveTexture(GL_TEXTURE0);
