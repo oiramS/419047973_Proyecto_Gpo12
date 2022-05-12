@@ -30,6 +30,7 @@ int SCREEN_WIDTH, SCREEN_HEIGHT;
 void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode);
 void MouseCallback(GLFWwindow* window, double xPos, double yPos);
 void DoMovement();
+void animacion();
 
 
 // Camera
@@ -43,11 +44,30 @@ glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
 glm::vec3 PosIni(-95.0f, 1.0f, -45.0f);
 glm::vec3 lightDirection(0.0f, -1.0f, -1.0f);
 
+glm::vec3 LightP1;
+
+//Animación del Sr Mojon
+float movKitX = -3.0;
+float movKitY = 3.0;
+float movKitZ = 15.0;
+
+float rotKit = 180.0;
+
+bool circuito = false;
+bool recorrido1 = true;
+bool recorrido2 = false;
+bool recorrido3 = false;
+bool recorrido4 = false;
+bool recorrido5 = false;
+
+
 GLfloat deltaTime = 0.0f;
 GLfloat lastFrame = 0.0f;
 float rot = 0.0f;
 bool isOpen = false;
 
+
+float tiempo;
 int main()
 {
 	// Init GLFW
@@ -101,12 +121,15 @@ int main()
 	Shader shader("Shaders/modelLoading.vs", "Shaders/modelLoading.frag");
 	Shader lampshader("Shaders/lamp.vs", "Shaders/lamp.frag");
 	Shader SkyBoxshader("Shaders/SkyBox.vs", "Shaders/SkyBox.frag");
+	Shader Anim2("Shaders/anim2.vs", "Shaders/anim2.frag");
 
 
 	// Load models
 	Model wizardHat((char*)"Models/WizardHat/wizardHat.obj");
 	Model buro((char*)"Models/Buro/Buro.obj");
-	Model globo((char*)"Models/globo/Globo.obj");
+	Model globo((char*)"Models/Buro/globo.obj");
+	Model estruct_globo((char*)"Models/Buro/estruct-globo.obj");
+
 	Model Telescope((char*)"Models/Telescope/Telescope.obj");
 	Model cofre((char*)"Models/Chest/Cofre.obj");
 	Model cama((char*)"Models/cama/cama.obj");
@@ -116,6 +139,11 @@ int main()
 	Model escritorio((char*)"Models/Escritorio/Escritorio.obj");
 	Model silla((char*)"Models/Silla/Silla.obj");
 	Model tanque((char*)"Models/Tanque/Tanque.obj");
+
+	Model aguaTanque((char*)"Models/Tanque/aguaTanque.obj");
+	Model cuerpoTanque((char*)"Models/Tanque/cuerpoTanque.obj");
+
+
 
 	Model casa((char*)"Models/Casa2/casa.obj");
 	Model srMojon((char*)"Models/mojon/mojon.obj");
@@ -327,6 +355,10 @@ int main()
 	// Game 
 	glm::mat4 projection = glm::perspective(camera.GetZoom(), (float)SCREEN_WIDTH / (float)SCREEN_HEIGHT, 0.1f, 100.0f);
 
+	lightingShader.Use();
+	glUniform1i(glGetUniformLocation(lightingShader.Program, "material.diffuse"), 0);
+	glUniform1i(glGetUniformLocation(lightingShader.Program, "material.specular"), 1);
+
 	while (!glfwWindowShouldClose(window))
 	{
 		// Set frame time
@@ -337,6 +369,32 @@ int main()
 		// Check and call events
 		glfwPollEvents();
 		DoMovement();
+		animacion();
+		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		//Load Model
+
+
+		// Use cooresponding shader when setting uniforms/drawing objects
+		lightingShader.Use();
+		GLint viewPosLoc = glGetUniformLocation(lightingShader.Program, "viewPos");
+		glUniform3f(viewPosLoc, camera.GetPosition().x, camera.GetPosition().y, camera.GetPosition().z);
+		// Set material properties
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "material.shininess"), 32.0f);
+		// == ==========================
+		// Here we set all the uniforms for the 5/6 types of lights we have. We have to set them manually and index
+		// the proper PointLight struct in the array to set each uniform variable. This can be done more code-friendly
+		// by defining light types as classes and set their values in there, or by using a more efficient uniform approach
+		// by using 'Uniform buffer objects', but that is something we discuss in the 'Advanced GLSL' tutorial.
+		// == ==========================
+		// Directional light
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.direction"), -0.2f, -1.0f, -0.3f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.ambient"), 1.0f, 1.0f, 1.0f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.diffuse"), 0.4f, 0.4f, 0.4f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.specular"), 0.5f, 0.5f, 0.5f);
+
+
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "material.shininess"), 32.0f);
 
 		// Clear the colorbuffer
 		glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
@@ -381,9 +439,16 @@ int main()
 
 		model = glm::mat4(1);
 		model = glm::rotate(model, glm::radians(5.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::translate(model, glm::vec3(-6.0f, 0.0f, 2.0f));
+		model = glm::translate(model, glm::vec3(-6.5f, 2.6f, 1.2f));
+		model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 0.1f, 0.0f));
 		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
 		globo.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::rotate(model, glm::radians(5.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(-6.0f, 0.0f, 2.0f));
+		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+		estruct_globo.Draw(lightingShader);
 
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(-1.0f, 2.5f, -7.0f));
@@ -393,8 +458,8 @@ int main()
 		wizardHat.Draw(lightingShader);
 
 		model = glm::mat4(1);
-		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
-		model = glm::translate(model, glm::vec3(0.0f, -0.5f, 5.0f));
+		model = glm::translate(model, glm::vec3(3.0f, -0.5f, -5.5f));
+		model = glm::scale(model, glm::vec3(0.66f, 0.66f, 0.66f));
 		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
 		robot.Draw(lightingShader);
@@ -426,8 +491,33 @@ int main()
 		model = glm::translate(model, glm::vec3(0.0f, -0.3f, 15.0f));
 		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-		tanque.Draw(lightingShader);
+		cuerpoTanque.Draw(lightingShader);
 
+		GLint modelLoc = glGetUniformLocation(lightingShader.Program, "model");
+		GLint viewLoc = glGetUniformLocation(lightingShader.Program, "view");
+		GLint projLoc = glGetUniformLocation(lightingShader.Program, "projection");
+
+
+		Anim2.Use();
+		tiempo = glfwGetTime();
+		modelLoc = glGetUniformLocation(Anim2.Program, "model");
+		viewLoc = glGetUniformLocation(Anim2.Program, "view");
+		projLoc = glGetUniformLocation(Anim2.Program, "projection");
+
+		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+		glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+
+		model = glm::mat4(1);
+		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		model = glm::translate(model, glm::vec3(0.0f, -0.3f, 15.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1f(glGetUniformLocation(Anim2.Program, "time"), tiempo);
+		aguaTanque.Draw(Anim2);
+
+		shader.Use();
 		model = glm::mat4(1);
 		model = glm::scale(model, glm::vec3(2.0f, 1.5f, 3.0f));
 		model = glm::translate(model, glm::vec3(5.0f, -6.5f, 0.0f));
@@ -437,8 +527,8 @@ int main()
 
 		model = glm::mat4(1);
 		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
-		model = glm::translate(model, glm::vec3(-3.0f, 2.0f, 15.0f));
-		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(movKitX, movKitY, movKitZ));
+		model = glm::rotate(model, glm::radians(rotKit), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
 		srMojon.Draw(lightingShader);
 
@@ -520,6 +610,38 @@ void DoMovement()
 	}
 
 }
+
+void animacion() {
+	//Movimiento del coche
+	if (true)
+	{
+		if (recorrido1)
+		{
+			movKitZ -= 0.05f;
+			movKitY += 0.05f * sin(60.0f) + 0.005;
+			rotKit = 180.0f;
+			if (movKitY < 0.0f)
+			{
+				recorrido1 = false;
+				recorrido2 = true;
+			}
+		}
+		if (recorrido2)
+		{
+			movKitZ += 0.05f;
+			movKitY -= 0.05f * sin(60.0f) + 0.005;
+
+			rotKit = 0.0f;
+			if (movKitY > 3.0f)
+			{
+				recorrido1 = true;
+				recorrido2 = false;
+			}
+		}
+	}
+}
+
+
 
 // Is called whenever a key is pressed/released via GLFW
 void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode)
