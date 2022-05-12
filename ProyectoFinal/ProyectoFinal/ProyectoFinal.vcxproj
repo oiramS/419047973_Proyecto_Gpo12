@@ -159,6 +159,9 @@
     <None Include="Shaders\SkyBox.frag" />
     <None Include="Shaders\SkyBox.vs" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Texture.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

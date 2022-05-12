@@ -1,15 +1,15 @@
 ﻿  ProyectoFinal.cpp
-D:\Users\oiram\Desktop\Zoomestre 2022-2\CGEIHC\419047973_Proyecto_Gpo12\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(193,24): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-D:\Users\oiram\Desktop\Zoomestre 2022-2\CGEIHC\419047973_Proyecto_Gpo12\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(391,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-D:\Users\oiram\Desktop\Zoomestre 2022-2\CGEIHC\419047973_Proyecto_Gpo12\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(392,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-D:\Users\oiram\Desktop\Zoomestre 2022-2\CGEIHC\419047973_Proyecto_Gpo12\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(396,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-D:\Users\oiram\Desktop\Zoomestre 2022-2\CGEIHC\419047973_Proyecto_Gpo12\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(397,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-D:\Users\oiram\Desktop\Zoomestre 2022-2\CGEIHC\419047973_Proyecto_Gpo12\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(399,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-D:\Users\oiram\Desktop\Zoomestre 2022-2\CGEIHC\419047973_Proyecto_Gpo12\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(400,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\Users\oiram\Desktop\Zoomestre 2022-2\CGEIHC\419047973_Proyecto_Gpo12\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(333,24): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\Users\oiram\Desktop\Zoomestre 2022-2\CGEIHC\419047973_Proyecto_Gpo12\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(553,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\Users\oiram\Desktop\Zoomestre 2022-2\CGEIHC\419047973_Proyecto_Gpo12\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(554,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\Users\oiram\Desktop\Zoomestre 2022-2\CGEIHC\419047973_Proyecto_Gpo12\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(558,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\Users\oiram\Desktop\Zoomestre 2022-2\CGEIHC\419047973_Proyecto_Gpo12\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(559,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\Users\oiram\Desktop\Zoomestre 2022-2\CGEIHC\419047973_Proyecto_Gpo12\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(561,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\Users\oiram\Desktop\Zoomestre 2022-2\CGEIHC\419047973_Proyecto_Gpo12\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(562,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
 soil2-debug.lib(SOIL2.obj) : warning LNK4075: se omite '/EDITANDCONTINUE' debido a la especificación '/OPT:ICF'
 LINK : warning LNK4098: la biblioteca predeterminada'MSVCRTD' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
   Generando código
-  1 of 610 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+  1 of 674 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Generación de código finalizada

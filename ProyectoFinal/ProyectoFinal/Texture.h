@@ -13,13 +13,13 @@
 class TextureLoading
 {
 public:
-	static GLuint LoadTexture(GLchar *path)
+	static GLuint LoadTexture(GLchar* path)
 	{
 		unsigned int textureID;
 		glGenTextures(1, &textureID);
 
 		int width, height, nrComponents;
-		unsigned char *data = stbi_load(path, &width, &height, &nrComponents, 0);
+		unsigned char* data = stbi_load(path, &width, &height, &nrComponents, 0);
 		if (data)
 		{
 			GLenum format;
@@ -52,7 +52,7 @@ public:
 	}
 
 
-	static GLuint LoadCubemap(vector<const GLchar * > faces)
+	static GLuint LoadCubemap(vector<const GLchar* > faces)
 	{
 		GLuint textureID;
 		glGenTextures(1, &textureID);
@@ -60,7 +60,7 @@ public:
 		int width, height, nrChannels;
 		for (unsigned int i = 0; i < faces.size(); i++)
 		{
-			unsigned char *data = stbi_load(faces[i], &width, &height, &nrChannels, 0);
+			unsigned char* data = stbi_load(faces[i], &width, &height, &nrChannels, 0);
 			if (data)
 			{
 				glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
