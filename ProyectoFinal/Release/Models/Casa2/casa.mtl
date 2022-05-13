@@ -25,35 +25,7 @@ Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
 map_Kd madera.png
 Ni 1.00
-newmtl lambert5SG
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd marcos.png
-Ni 1.00
 newmtl lambert6SG
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd marco-silla.png
-Ni 1.00
-newmtl lambert7SG
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd marco-silla.png
-Ni 1.00
-newmtl lambert8SG
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd man.png
-Ni 1.00
-newmtl lambert9SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -144,255 +116,185 @@ Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
 map_Kd concrete.png
 Ni 1.00
-newmtl pasted__lambert5SG
+newmtl lambert28SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd marcos.png
+map_Kd color_fachada.png
 Ni 1.00
-newmtl pasted__lambert5SG1
+newmtl lambert29SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd marcos.png
+map_Kd color_fachada.png
 Ni 1.00
-newmtl pasted__lambert5SG2
+newmtl lambert30SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd marcos.png
+map_Kd color_fachada.png
 Ni 1.00
-newmtl pasted__lambert5SG3
+newmtl lambert32SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd marcos.png
+map_Kd color_fachada.png
 Ni 1.00
-newmtl pasted__lambert5SG4
+newmtl lambert33SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd marcos.png
+map_Kd madera.png
 Ni 1.00
-newmtl pasted__lambert5SG5
+newmtl lambert34SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd marcos.png
+map_Kd azul-vent.png
 Ni 1.00
-newmtl pasted__lambert5SG6
+newmtl lambert35SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd marcos.png
+map_Kd man.png
 Ni 1.00
-newmtl pasted__lambert5SG7
+newmtl lambert37SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd marcos.png
+map_Kd Pared.png
 Ni 1.00
-newmtl pasted__lambert5SG8
+newmtl lambert38SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd marcos.png
+map_Kd Pared.png
 Ni 1.00
-newmtl pasted__lambert5SG9
+newmtl lambert39SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd marcos.png
+map_Kd Pared.png
 Ni 1.00
-newmtl pasted__lambert5SG10
+newmtl lambert40SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd marcos.png
+map_Kd eltecho.png
 Ni 1.00
-newmtl pasted__lambert5SG11
+newmtl lambert41SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd marcos.png
+map_Kd felp.png
 Ni 1.00
-newmtl pasted__lambert5SG12
+newmtl lambert42SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd marcos.png
+map_Kd Pared.png
 Ni 1.00
-newmtl pasted__lambert5SG13
+newmtl lambert43SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd marcos.png
+map_Kd Pared.png
 Ni 1.00
-newmtl pasted__lambert5SG14
+newmtl lambert44SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd marcos.png
+map_Kd pared_cool.png
 Ni 1.00
-newmtl pasted__lambert5SG15
+newmtl lambert45SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd marcos.png
+map_Kd Pared.png
 Ni 1.00
-newmtl pasted__lambert5SG16
+newmtl lambert46SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd marcos.png
+map_Kd azul-vent.png
 Ni 1.00
-newmtl pasted__lambert5SG17
+newmtl lambert47SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd marcos.png
+map_Kd azul-vent.png
 Ni 1.00
-newmtl pasted__pasted__lambert5SG
+newmtl lambert48SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd marcos.png
+map_Kd madera.png
 Ni 1.00
-newmtl pasted__pasted__lambert5SG1
+newmtl lambert49SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd marcos.png
+map_Kd madera.png
 Ni 1.00
-newmtl pasted__pasted__lambert5SG2
+newmtl lambert50SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd marcos.png
+map_Kd madera.png
 Ni 1.00
-newmtl pasted__pasted__lambert5SG3
+newmtl pasted__lambert3SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd marcos.png
+map_Kd color_fachada.png
 Ni 1.00
-newmtl pasted__pasted__lambert5SG4
+newmtl pasted__lambert14SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd marcos.png
+map_Kd fence.png
 Ni 1.00
-newmtl pasted__pasted__lambert5SG5
+newmtl pasted__lambert17SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd marcos.png
+map_Kd Pared.png
 Ni 1.00
-newmtl pasted__pasted__lambert5SG6
+newmtl pasted__lambert35SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd marcos.png
+map_Kd man.png
 Ni 1.00
-newmtl pasted__pasted__lambert5SG7
+newmtl pasted__lambert48SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd marcos.png
-Ni 1.00
-newmtl pasted__pasted__lambert5SG8
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd marcos.png
-Ni 1.00
-newmtl pasted__pasted__lambert5SG9
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd marcos.png
-Ni 1.00
-newmtl pasted__pasted__lambert5SG10
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd marcos.png
-Ni 1.00
-newmtl pasted__pasted__lambert5SG11
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd marcos.png
-Ni 1.00
-newmtl pasted__pasted__lambert5SG12
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd marcos.png
-Ni 1.00
-newmtl pasted__pasted__lambert5SG13
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd marcos.png
-Ni 1.00
-newmtl pasted__pasted__lambert5SG14
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd marcos.png
-Ni 1.00
-newmtl pasted__pasted__lambert5SG15
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd marcos.png
-Ni 1.00
-newmtl pasted__pasted__lambert5SG16
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd marcos.png
-Ni 1.00
-newmtl pasted__pasted__lambert5SG17
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd marcos.png
+map_Kd madera.png
 Ni 1.00

@@ -615,10 +615,11 @@ void animacion() {
 	//Movimiento del coche
 	if (true)
 	{
+
 		if (recorrido1)
 		{
-			movKitZ -= 0.05f;
-			movKitY += 0.05f * sin(60.0f) + 0.005;
+			movKitZ -= 0.05f * cos(glm::radians(60.0f));
+			movKitY -= 0.005f * sin(glm::radians(60.0f)) + 0.0005;
 			rotKit = 180.0f;
 			if (movKitY < 0.0f)
 			{
@@ -628,8 +629,8 @@ void animacion() {
 		}
 		if (recorrido2)
 		{
-			movKitZ += 0.05f;
-			movKitY -= 0.05f * sin(60.0f) + 0.005;
+			movKitZ += 0.05f * cos(glm::radians(60.0f));
+			movKitY += 0.005f * sin(glm::radians(60.0f)) + 0.0005;
 
 			rotKit = 0.0f;
 			if (movKitY > 3.0f)
