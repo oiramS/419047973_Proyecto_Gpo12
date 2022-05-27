@@ -148,6 +148,30 @@ int main()
 	Model casa((char*)"Models/Casa2/casa.obj");
 	Model srMojon((char*)"Models/mojon/mojon.obj");
 
+	//Cuarto 2
+	Model interruptor((char*)"Models/Interruptor/Interruptor.obj");
+	Model interruptor_cuerpo((char*)"Models/Interruptor/Interruptor-cuerpo.obj");
+	Model interruptor_palanca((char*)"Models/Interruptor/Interruptor-palanca.obj");
+
+	Model escaleras((char*)"Models/Escaleras/escaleras.obj");
+	Model pizarra((char*)"Models/Pizarra/Pizarra.obj");
+	Model playera((char*)"Models/Playera/Playera.obj");
+	Model mueble((char*)"Models/Interruptor/Mueble.obj");
+	Model mapache((char*)"Models/Mapache/Mapache.obj");
+	Model doll((char*)"Models/Doll/Doll.obj");
+	Model mesa((char*)"Models/Mesa/Mesa.obj");
+	Model prision((char*)"Models/Prision/Prision.obj");
+	Model propina((char*)"Models/Propina/Propina.obj");
+	Model sillaB((char*)"Models/SillaB/Silla.obj");
+
+
+
+
+
+
+
+
+
 
 
 
@@ -407,9 +431,33 @@ int main()
 		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
 
 
+
+
 		// Draw the loaded model
 		glm::mat4 model(1);
 		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+
+		// Cuarto 2
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(15.0f, -5.0f, 6.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+		interruptor_cuerpo.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(15.0f, -5.0f, 6.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+		interruptor_palanca.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(15.0f, -9.0f, 6.5f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+		interruptor.Draw(lightingShader);
+
+
+		//Cuarto 1
 
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(-3.0f, 0.5f, -6.5f));
